@@ -25,7 +25,7 @@ sudo docker image build -t sloopstash/redis:v4.0.9 -f image/redis/4.0.9/amazon-l
     stage('CI: Bootsrap testing environment') {
       steps {
         sh '''cd kickstart-docker
-sudo docker compose -f compose/crm.yml --env-file compose/QAB.env -p sloopstash-QAB-crm up -d
+sudo docker compose -f compose/crm.yml --env-file compose/QAB.env -p sloopstash-QAB up -d
 sudo docker container exec sloopstash-QAB-crm-app-1 pip install pytest'''
       }
     }
