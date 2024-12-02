@@ -1,0 +1,63 @@
+/* Main styles. */
+@font-face {
+  font-family:inter-black;
+  src:url(../font/inter/black.ttf);
+}
+@font-face {
+  font-family:inter-extra-bold;
+  src:url(../font/inter/extra-bold.ttf);
+}
+@font-face {
+  font-family:inter-bold;
+  src:url(../font/inter/bold.ttf);
+}
+@font-face {
+  font-family:inter-regular;
+  src:url(../font/inter/regular.ttf);
+}
+html {
+  margin:0px;
+  padding:0px;
+  height:100%;
+}
+body {
+  font-family:inter-regular,sans !important;
+  margin:0px;
+  padding:0px;
+  height:100%;
+}
+body::-webkit-scrollbar {
+  width:0.625rem;
+}
+body::-webkit-scrollbar-track {
+  background:#eceff1;
+}
+body::-webkit-scrollbar-thumb {
+  background-color:#90a4ae;
+  border-radius:20px;
+}
+h1,h2,h3 {
+  font-family:inter-black,sans !important;
+}
+h4,h5,h6 {
+  font-family:inter-extra-bold,sans !important;
+}
+strong,table thead th {
+  font-family:inter-bold,sans !important;
+}
+#header {}
+#content {}
+#main-menu {}
+.zero-margin {
+  margin:0px !important;
+}
+.zero-padding {
+  padding:0px !important;
+}
+.icon {
+  padding:0px 5px 0px 5px;
+}
+.brand-icon {
+  height:45px;
+  vertical-align:middle;
+}

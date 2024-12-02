@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 ##
 ##
-# Contact controller.
+# User controller.
 ##
 
 # Import community modules.
@@ -13,8 +13,8 @@ from werkzeug.exceptions import NotFound,BadRequest
 from controller import root_web_controller
 
 
-# Contact web controller.
-class contact_web_controller(root_web_controller):
+# User web controller.
+class user_web_controller(root_web_controller):
 
   # HTTP GET method processor.
   def get(self,*args,**kwargs):

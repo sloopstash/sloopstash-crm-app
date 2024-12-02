@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>{% block title %}SloopStash CRM{% endblock %}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="icon" type="image/x-icon" href="//{{var['static']['endpoint']}}/asset/image/icon/transparent/light.svg"/>
+    <link rel="stylesheet" href="//{{var['static']['endpoint']}}/library/materialize/css/main.css" media="screen">
+    <link rel="stylesheet" href="//{{var['static']['endpoint']}}/library/font-awesome/css/main.css" media="screen">
+    <link rel="stylesheet" href="//{{var['static']['endpoint']}}/asset/css/main.css" media="screen">
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+    <header id="header">
+      {% block header %}
+      <div class="navbar-fixed">
+        <ul class="dropdown-content" id="user-menu">
+          <li><a href="/preferences"><i class="fa-solid fa-sliders fa-lg"></i>Preferences</a></li>
+          <li><a href="/logout"><i class="fa-solid fa-power-off fa-lg"></i>Logout</a></li>
+        </ul>
+        <nav class="nav-extended">
+          <div class="nav-wrapper">
+            <ul class="left">
+              <li>
+                <a href="/dashboard">
+                  <img alt="SloopStash icon." class="brand-icon" src="//{{var['static']['endpoint']}}/asset/image/icon/transparent/light.svg"/>
+                </a>
+              </li>
+            </ul>
+            <ul class="right">
+              <li>
+                <a class="dropdown-trigger" data-target="user-menu" href="#!">
+                  <i class="fa-solid fa-user-astronaut fa-xl icon"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      {% endblock %}
+    </header>
+    <main id="content">
+      {% block content %}{% endblock %}
+    </main>
+    <footer id="footer" class="page-footer">
+      {% block footer %}{% endblock %}
+      <div class="footer-copyright">
+        <div class="container clearfix valign-wrapper">
+          <div class="left" style="width:50%;">
+            <p class="truncate">
+              <small>Copyright <i class="fa-regular fa-copyright"></i> 2024 SloopStash. All rights reserved.</small>
+            </p>
+          </div>
+          <div class="right" style="width:50%;">
+            <p class="truncate">
+              <small>Follow us <strong>@sloopstash</strong> on LinkedIn and GitHub.</small>
+              <span>&nbsp;-&nbsp;</span>
+              <a href="https://sloopstash.com/privacy.html" target="_blank">
+                <small>Privacy</small>
+              </a>
+              <span>&nbsp;-&nbsp;</span>
+              <a href="https://sloopstash.com/terms.html" target="_blank">
+                <small>Terms</small>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="//{{var['static']['endpoint']}}/library/jquery/js/main.js"></script>
+    <script type="text/javascript" src="//{{var['static']['endpoint']}}/library/materialize/js/main.js"></script>
+    <script type="text/javascript" src="//{{var['static']['endpoint']}}/theme/classic/js/main.js"></script>
+    <script type="text/javascript" src="//{{var['static']['endpoint']}}/asset/js/main.js"></script>
+    {% block js %}{% endblock %}
+    <script type="text/javascript"></script>
+  </body>
+</html>
