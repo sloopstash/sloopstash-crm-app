@@ -7,7 +7,6 @@
 
 # Import community modules.
 from flask import render_template
-from werkzeug.exceptions import NotFound,BadRequest
 
 # Import custom modules.
 from controller import root_web_controller

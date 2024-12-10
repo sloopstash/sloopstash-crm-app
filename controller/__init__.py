@@ -5,9 +5,6 @@
 # Root controller.
 ##
 
-# Import community modules.
-import json
-
 # Import custom modules.
 from config import main_conf,static_conf
 from database import redis

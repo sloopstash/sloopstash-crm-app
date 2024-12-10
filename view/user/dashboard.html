@@ -1,0 +1,67 @@
+{% extends 'main.html' %}
+
+{% block title %}Dashboard | SloopStash CRM{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col s3 m3 l3">
+    <ul class="tab z-depth-1" id="main-menu">
+      <li class="tab-item">
+        <a class="tab-link" href="#customers">
+          <span class="fa-stack purple-text text-purple">
+            <i class="fa-regular fa-square fa-stack-2x"></i>
+            <i class="fa-regular fa-address-book fa-stack-1x"></i>
+          </span>
+        </a>
+        <p><small>Customers</small></p>
+      </li>
+    </ul>
+  </div>
+  <div class="col s18 m18 l18">
+    <div class="block tab-content" id="customers">
+      <div class="block-header clearfix valign-wrapper">
+        <div class="block-title left">
+          <h2>
+            <span class="fa-stack purple-text text-purple fa-xs">
+              <i class="fa-regular fa-square fa-stack-2x"></i>
+              <i class="fa-regular fa-address-book fa-stack-1x"></i>
+            </span> Customers
+          </h2>
+        </div>
+        <div class="block-menu right">
+          <a class="btn-small green darken-1 right" href="/customer/create">Create customer</a>
+        </div>
+      </div>
+      <div class="block-content"></div>
+      <div class="block-footer">
+        <div class="block-action right"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col s3 m3 l3"></div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+  $(document).ready(function() {
+    var main_menu = new app.tab({
+      'container':'#main-menu',
+      'default':'customers',
+      'items':[
+        {
+          'identifier':'#customers',
+          'pager':{
+            'name':'customers',
+            'mode':'normal',
+            'entity':'customer',
+            'url':'/customers',
+            'query':null,
+            'container':'#customers'
+          }
+        }
+      ]
+    });
+  });
+</script>
+{% endblock %}

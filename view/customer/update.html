@@ -1,0 +1,59 @@
+{% extends 'main.html' %}
+
+{% block title %}Update customer | SloopStash CRM{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col s1 m1 l1"></div>
+  <div class="col s15 m15 l15">
+    <div class="block">
+      <div class="block-header clearfix valign-wrapper">
+        <div class="block-title left">
+          <h2><i class="fa-regular fa-address-book"></i> Update customer</h2>
+        </div>
+        <div class="block-menu right"></div>
+      </div>
+      <div class="block-content">
+        <form class="form" method="post" autocomplete="off" action="/customer/{{var['customer']['id']}}/update">
+          <div class="row">
+            <div class="input-field col s24 m24 l24">
+              <input id="name" name="name" type="text" data-length="50" maxlength="50" value="{{var['customer']['name']}}" required>
+              <label for="name">Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s24 m24 l24">
+              <input id="email" name="email" type="email" data-length="50" maxlength="50" value="{{var['customer']['email']}}" required>
+              <label for="name">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s24 m24 l24">
+              <input id="phone" name="phone" type="tel" data-length="50" maxlength="50" value="{{var['customer']['phone']}}" required>
+              <label for="phone">Phone</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s24 m24 l24">
+              <input id="website" name="website" type="url" data-length="128" maxlength="128" value="{{var['customer']['website']}}" required>
+              <label for="website">Website</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s24 m24 l24">
+              <textarea id="description" name="description" class="materialize-textarea" data-length="255" maxlength="255" required>{{var['customer']['description']}}</textarea>
+              <label for="description">Description</label>
+            </div>
+          </div>
+          <button type="submit" class="btn-small right">Save</button>
+          <a class="btn-flat right" href="/dashboard?tab=customers">Cancel</a>
+        </form>
+      </div>
+      <div class="block-footer">
+        <div class="block-action right"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col s8 m8 l8"></div>
+</div>
+{% endblock %}

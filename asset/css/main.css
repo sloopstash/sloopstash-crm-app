@@ -61,3 +61,73 @@ strong,table thead th {
   height:45px;
   vertical-align:middle;
 }
+.brand-logo {}
+.brand-logo .vertical-small {
+  height:128px;
+  vertical-align:middle;
+}
+.brand-logo .vertical-medium {
+  height:192px;
+  vertical-align:middle;
+}
+.brand-logo .vertical-large {
+  height:256px;
+  vertical-align:middle;
+}
+.paragraph {
+  font-size:12px;
+}
+.tab {
+  position:fixed;
+  left:0;
+  width:75px;
+  height:100%;
+  background-color:#eceff1;
+  margin:0px;
+}
+.tab-item {
+  text-align:center;
+  padding:10px 0px 0px 0px;
+  border-bottom:1px solid #cfd8dc;
+}
+.tab-active {
+  background-color:#cfd8dc;
+}
+.tab-link {}
+.tab-content {
+  display:none;
+}
+.block {
+  padding:20px;
+}
+.block-title {
+  width:70%;
+}
+.block-title p {
+  font-size:12px;
+}
+.block-menu {
+  width:30%;
+}
+.block-content::-webkit-scrollbar {
+  width:0.37rem;
+}
+.block-content::-webkit-scrollbar-track {
+  background:#eceff1;
+}
+.block-content::-webkit-scrollbar-thumb {
+  background-color:#90a4ae;
+  border-radius:15px;
+}
+.block-footer {
+  padding:20px 0px 20px 0px;
+}
+#footer {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  z-index:200;
+}
+#footer p {
+  margin:0px;
+}
