@@ -74,6 +74,18 @@ strong,table thead th {
   height:256px;
   vertical-align:middle;
 }
+.brand-logo .horizontal-small {
+  height:48px;
+  vertical-align:middle;
+}
+.brand-logo .horizontal-medium {
+  height:96px;
+  vertical-align:middle;
+}
+.brand-logo .horizontal-large {
+  height:128px;
+  vertical-align:middle;
+}
 .paragraph {
   font-size:12px;
 }
