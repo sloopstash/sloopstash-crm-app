@@ -211,6 +211,7 @@ var app = app || {};
             thead.append(thead_row);
             $.each(this.items,function(index,item) {
               var tbody_row = `
+              
                 <tr>
                 <td>
                 <p><a href="/customer/`+item['id']+`/dashboard">`+item['name']+`</a></p>
@@ -229,6 +230,40 @@ var app = app || {};
               tbody.append(tbody_row);
             });
             break;
+
+            case 'contact':
+            var thead_row = `
+              <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+              <th>Phonenumber</th>
+              <th>Actions</th>
+              </tr>
+            `;
+            thead.append(thead_row);
+            $.each(this.items,function(index,item) {
+              var tbody_row = `
+                <tr>
+                <td>
+                <p><a href="/customer/`+item['customer_id']+`/dashboard">`+item['first_name']+``+item['last_name']+`</a></p>
+                <p class="paragraph">`+item['description']+`</p>
+                </td>
+                <td>`+item['email']+`</td>
+                <td>`+item['Phonenumber']+`</td>
+                <td>
+                <a href="/customer/`+item['customer_id']+`/contact/`+item['contact_id']+`/update">
+                <i class="fa-solid fa-pen-clip icon"></i>
+                </a>
+                <a href="/customer/`+item['customer_id']+`/contact/`+item['contact_id']+`/delete">
+                <i class="fa-solid fa-trash-can icon"></i>
+                </td>
+                </tr>
+              `;
+              tbody.append(tbody_row);
+            });
+            break;
+
           default:
             break;
         }

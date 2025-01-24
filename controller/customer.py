@@ -13,7 +13,7 @@ from flask import render_template,jsonify,redirect
 # Import custom modules.
 from controller import root_web_controller
 from model.customer import customer
-
+from model.contact import contact  # Add this import
 
 # Customer web controller.
 class customer_web_controller(root_web_controller):
@@ -42,9 +42,16 @@ class customer_web_controller(root_web_controller):
       return render_template('customer/update.html',var=self.var)
     elif self.request.path=='/customer/'+args[0]+'/dashboard':
       customer_id = args[0]
-      self.var['customer'] = customer().get(customer_id)
+      # self.var['customer'] = customer().get(customer_id)
+      customer_data = customer().get(customer_id)
+      if customer_data:# Fetch customer data
+        self.var['customer'] = customer_data
+      # Fetch contacts for this customer
+      contacts = contact().list_for_customer(customer_id)
+      self.var['contacts'] = contacts
       return render_template('customer/dashboard.html',var=self.var)
     else:
+      
       return render_template('error.html',var=self.var)
 
   # HTTP POST method processor.
