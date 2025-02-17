@@ -102,18 +102,20 @@ class contact(object):
   def list_for_customer(self, customer_id):
     try:
       keys = self.redis.engine.keys("customer:{}:contact:*".format(customer_id))
+      print "Fetched keys for customer {}: {}".format(customer_id, keys)  
       if not keys:
         return []
       items = []
       for key in keys:
         contact_data = self.redis.engine.hgetall(key)
-        contact_id = key.decode().split(":")[-1]
+        contact_id = key.split(":")[-1]  
         contact_data['id'] = contact_id
         items.append(contact_data)
+      print "Returning contacts for customer {}: {}".format(customer_id, items)
       return items
     except Exception as e:
+      print("Error fetching contacts:", e)  
       return [] 
-
 
   # Delete contact.
   def delete(self, customer_id, contact_id):
