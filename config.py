@@ -6,6 +6,7 @@
 ##
 
 # Import community modules.
+import os
 import json
 
 
@@ -23,6 +24,8 @@ def static_conf():
   conf = file.read()
   conf = json.loads(conf)
   file.close()
+  if 'STATIC_ENDPOINT' in os.environ:
+    conf['endpoint'] = os.environ['STATIC_ENDPOINT']
   return conf
 
 # Load redis.conf configuration file.
